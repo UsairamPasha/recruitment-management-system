@@ -173,21 +173,28 @@ http://127.0.0.1:5000
 
 # 📸 Screenshots
 
-## Login Page
+## 🏠 Landing Page
 
-> *(Add screenshot here)*
+![Landing Page](screenshots/landing page.png)
 
-## Dashboard
+---
 
-> *(Add screenshot here)*
+## 🏡 Home Page
 
-## Job Management
+![Home Page](screenshots/home.png)
 
-> *(Add screenshot here)*
+---
 
-## Applicant Management
+## 🔑 Login Page
 
-> *(Add screenshot here)*
+![Login Page](screenshots/login.png)
+
+---
+
+## 📊 Dashboard
+
+![Dashboard](screenshots/dashboard.png)
+
 
 ---
 
