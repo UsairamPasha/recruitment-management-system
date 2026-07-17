@@ -1,0 +1,441 @@
+/* =========================
+   THEME VARIABLES 🌸
+========================= */
+:root {
+    --pink-100: #fff0f5;
+    --pink-200: #ffe6f0;
+    --pink-300: #fbcfe8;
+    --pink-500: #f472b6;
+    --pink-600: #ec4899;
+
+    --purple-400: #818cf8;
+    --purple-500: #6366f1;
+
+    --text-main: #374151;
+    --text-muted: #6b7280;
+    --white: #ffffff;
+
+    --radius-lg: 25px;
+    --radius-md: 18px;
+    --radius-sm: 14px;
+
+    --shadow-soft: 0 12px 28px rgba(236,72,153,0.18);
+    --shadow-strong: 0 25px 45px rgba(236,72,153,0.22);
+
+    --transition: all 0.3s ease;
+}
+
+/* =========================
+   GLOBAL RESET 🌸
+========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', 'Segoe UI', sans-serif;
+    background: var(--pink-100);
+    color: var(--text-main);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* =========================
+   HEADER 🌸
+========================= */
+.dashboard-header {
+    background: linear-gradient(135deg, var(--pink-500), var(--pink-600));
+    color: var(--white);
+    padding: 18px 40px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-container h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+}
+
+.btn-logout {
+    padding: 8px 22px;
+    border-radius: 30px;
+    background: var(--white);
+    color: var(--pink-600);
+    font-weight: 600;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.btn-logout:hover {
+    background: var(--pink-200);
+    transform: translateY(-2px);
+}
+
+.btn-logout:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(236,72,153,0.35);
+}
+
+/* =========================
+   MAIN CONTENT 🌸
+========================= */
+.main-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 160px);
+    padding: 40px 20px;
+}
+
+.main-content h2 {
+    color: #db2777;
+    font-size: 1.8rem;
+    margin-bottom: 12px;
+    text-align: center;
+}
+
+/* =========================
+   DASHBOARD CARD 🌸
+========================= */
+.dashboard-card {
+    width: 100%;
+    max-width: 1000px;
+    text-align: center;
+}
+
+/* =========================
+   CARDS / FORMS 🌸
+========================= */
+.auth-card {
+    background: var(--pink-100);
+    padding: 32px;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-strong);
+    transition: var(--transition);
+}
+
+.auth-card:hover {
+    transform: translateY(-4px);
+}
+
+/* =========================
+   TEXT 🌸
+========================= */
+.dashboard-text {
+    margin-top: 10px;
+    font-size: 15px;
+    color: var(--text-muted);
+}
+
+/* =========================
+   FORMS 🌸
+========================= */
+.form-label {
+    font-weight: 500;
+    margin-bottom: 6px;
+    display: block;
+    font-size: 0.95rem;
+}
+
+.form-control,
+textarea.form-control,
+select.form-control {
+    width: 100%;
+    padding: 13px 16px;
+    margin-bottom: 18px;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--pink-300);
+    background: var(--pink-100);
+    font-size: 14px;
+    transition: var(--transition);
+}
+
+.form-control:focus,
+textarea.form-control:focus,
+select.form-control:focus {
+    outline: none;
+    border-color: var(--pink-600);
+    box-shadow: 0 0 0 4px rgba(236,72,153,0.25);
+}
+
+/* =========================
+   BUTTONS 🌸
+========================= */
+.btn-primary,
+.btns {
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    border-radius: 30px;
+    padding: 13px 24px;
+    transition: var(--transition);
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--purple-500), var(--purple-400));
+    color: var(--white);
+}
+
+.btns {
+    background: linear-gradient(135deg, var(--pink-500), var(--pink-600));
+    color: var(--white);
+    width: 100%;
+}
+
+.btn-primary:hover,
+.btns:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(236,72,153,0.3);
+}
+
+.btn-primary:active,
+.btns:active {
+    transform: scale(0.97);
+}
+
+.btn-primary:focus-visible,
+.btns:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(99,102,241,0.35);
+}
+
+/* Small button */
+.btn-sm {
+    padding: 7px 14px;
+    font-size: 13px;
+    border-radius: 18px;
+}
+
+/* =========================
+   DASHBOARD BUTTON GROUP 🌸
+========================= */
+.dashboard-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+/* =========================
+   TABLES 🌸
+========================= */
+.table-custom-container {
+    width: 100%;
+    overflow-x: auto;
+    margin-top: 25px;
+    background: var(--pink-100);
+    padding: 18px;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-soft);
+    overflow: hidden; /* IMPORTANT FOR RADIUS */
+}
+
+.table-custom {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    min-width: 750px;
+    font-size: 14px;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+}
+
+.table-custom th,
+.table-custom td {
+    padding: 14px 18px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.5;
+}
+
+.table-custom th {
+    background: linear-gradient(135deg, var(--pink-500), var(--pink-600));
+    color: var(--white);
+    text-transform: uppercase;
+    font-size: 13px;
+}
+
+/* Rounded header corners */
+.table-custom thead th:first-child {
+    border-top-left-radius: var(--radius-md);
+}
+
+.table-custom thead th:last-child {
+    border-top-right-radius: var(--radius-md);
+}
+
+/* Rounded bottom corners */
+.table-custom tbody tr:last-child td:first-child {
+    border-bottom-left-radius: var(--radius-md);
+}
+
+.table-custom tbody tr:last-child td:last-child {
+    border-bottom-right-radius: var(--radius-md);
+}
+
+.table-custom tr {
+    transition: background 0.25s ease, color 0.25s ease;
+}
+
+.table-custom tr:nth-child(even) { background: var(--pink-100); }
+.table-custom tr:nth-child(odd)  { background: var(--pink-200); }
+
+.table-custom tr:hover {
+    background: linear-gradient(135deg, #f9a8d4, var(--pink-500));
+    color: var(--white);
+}
+
+/* =========================
+   BADGE 🌸
+========================= */
+.badge {
+    display: inline-block;
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-size: 12px;
+    background: var(--pink-300);
+    color: #9d174d;
+    font-weight: 500;
+}
+
+/* =========================
+   FOOTER 🌸
+========================= */
+.dashboard-footer {
+    background: linear-gradient(135deg, var(--pink-500), var(--pink-600));
+    color: var(--white);
+    text-align: center;
+    padding: 16px;
+    font-size: 14px;
+    margin-top: auto;
+}
+
+/* =========================
+   RESPONSIVE 🌸
+========================= */
+@media (max-width: 768px) {
+    .header-container h1 {
+        font-size: 1.6rem;
+    }
+
+    .auth-card {
+        padding: 24px;
+    }
+}
+
+@media (max-width: 640px) {
+    .dashboard-buttons {
+        flex-direction: column;
+    }
+
+    .table-custom {
+        min-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-content h2 {
+        font-size: 1.5rem;
+    }
+
+    .form-control {
+        padding: 11px 14px;
+    }
+}
+
+/* =========================
+   LEAVE JOB / DANGER CARD 🌸
+========================= */
+.danger-card {
+    border: 2px solid #f87171; /* soft red border */
+}
+
+.danger-text {
+    color: #b91c1c; /* dark red */
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.warning-text {
+    color: #991b1b; /* slightly muted red */
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+/* Button row */
+.action-row {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+/* Danger button style */
+.dashboard-btn {
+    border: none;
+    padding: 12px 24px;
+    border-radius: 25px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    color: #fff;
+    background: linear-gradient(135deg, var(--purple-500), var(--purple-400));
+}
+
+.dashboard-btn:hover {
+    transform: translateY(-2px) scale(1.02);
+}
+
+.dashboard-btn.danger {
+    background: linear-gradient(135deg, #ef4444, #b91c1c);
+}
+
+/* Center the card on screen */
+.dashboard-main {
+    min-height: calc(100vh - 140px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#flower-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5%; /* space between flowers */
+    padding: 2%;
+    z-index: 0; /* behind login card */
+    pointer-events: none;
+}
+
+.flower {
+    font-size: 2rem;
+    color: pink;
+    opacity: 0.2;
+    transform: rotate(-15deg); /* slight rotation */
+}

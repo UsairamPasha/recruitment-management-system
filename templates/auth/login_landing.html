@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>RMS – Select Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/auth.css') }}">
+
+    <style>
+        /* =========================
+           LANDING CONTAINER 🌸
+        ========================= */
+        .landing-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 24px;
+            width: 100%;
+            max-width: 900px;
+            z-index: 1;
+            margin-top: 20px;
+        }
+
+        /* =========================
+           LOGIN CARD 🌸
+        ========================= */
+        .landing-card {
+            background: rgba(255, 255, 255, 0.96);
+            padding: 32px 26px;
+            border-radius: 26px;
+            box-shadow: 0 25px 50px rgba(236, 72, 153, 0.35);
+            text-align: center;
+            transition: all 0.35s ease;
+        }
+
+        .landing-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 35px 70px rgba(236, 72, 153, 0.45);
+        }
+
+        .card-icon {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+        }
+
+        .landing-card h3 {
+            font-size: 1.45rem;
+            font-weight: 700;
+            color: #db2777;
+            margin-bottom: 12px;
+        }
+
+        .landing-card p {
+            font-size: 0.95rem;
+            color: #6b7280;
+            line-height: 1.6;
+            margin-bottom: 22px;
+        }
+
+        /* =========================
+           BUTTON 🌸
+        ========================= */
+        .landing-card a {
+            display: inline-block;
+            padding: 12px 26px;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: #fff;
+            background: linear-gradient(135deg, #f472b6, #ec4899);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .landing-card a:hover,
+        .landing-card a:focus {
+            background: linear-gradient(135deg, #ec4899, #f472b6);
+            transform: scale(1.05);
+            outline: none;
+        }
+
+        /* =========================
+           MOBILE 🌸
+        ========================= */
+        @media (max-width: 600px) {
+            .landing-card {
+                padding: 28px 22px;
+            }
+        }
+    </style>
+</head>
+
+<body class="auth-page">
+
+<div class="auth-wrapper">
+    <h2 class="auth-title">🌸 Recruitment Management System</h2>
+
+    <div class="landing-container">
+
+        <!-- Admin Login -->
+        <div class="landing-card">
+            <div class="card-icon">🛠️</div>
+            <h3>Admin Login</h3>
+            <p>Manage users, job postings, and applications from the admin dashboard.</p>
+            <a href="/login/admin">Continue</a>
+        </div>
+
+        <!-- Employee Login -->
+        <div class="landing-card">
+            <div class="card-icon">👨‍💼</div>
+            <h3>Employee Login</h3>
+            <p>Post jobs, review applications, and manage hiring activities.</p>
+            <a href="/login/employee">Continue</a>
+        </div>
+
+        <!-- Candidate Login -->
+        <div class="landing-card">
+            <div class="card-icon">🎓</div>
+            <h3>Candidate Login</h3>
+            <p>Apply for jobs and track your application status easily.</p>
+            <a href="/login/candidate">Continue</a>
+        </div>
+
+    </div>
+</div>
+
+<!-- Flower Background -->
+<div id="flower-background"></div>
+<script src="{{ url_for('static', filename='js/flowers.js') }}"></script>
+
+</body>
+</html>

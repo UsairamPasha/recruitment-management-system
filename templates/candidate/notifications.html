@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Notifications</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/candidate.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <h2 style="text-align: center; color: #ec4899;margin: 30px;">🌸 Notifications</h2>
+
+    <div style="display: flex; justify-content: center;">
+        <div class="auth-card mx-auto">
+            <ul class="list-custom">
+{% for note in notifications %}
+    <li class="notification-item {% if note.is_read == 0 %}unread{% endif %}">
+        <div class="notification-content">
+            {% if note.job_title %}<strong>Job: {{ note.job_title }}</strong> - {% endif %}{{ note.message }}
+            <span class="notification-time">{{ note.created_at }}</span>
+            {% if note.is_read == 0 %}
+                <span class="badge new-badge">New</span>
+            {% endif %}
+        </div>
+    </li>
+{% else %}
+    <li>No notifications found.</li>
+{% endfor %}
+</ul>
+
+
+            <a href="/candidate/dashboard" class="btn-primary mt-3 w-100" style="text-align: center;">Back to Dashboard</a>
+        </div>
+    </div>
+</div>
+
+<div id="flower-background"></div>
+    
+<!-- Include JS for flowers -->
+<script src="{{ url_for('static', filename='js/flowers.js') }}"></script>
+</body>
+</html>

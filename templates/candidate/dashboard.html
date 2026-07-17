@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Candidate Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/candidate.css') }}">
+</head>
+<body>
+
+<!-- =========================
+     HEADER
+========================= -->
+<header class="dashboard-header">
+    <div class="header-container">
+        <h1>Candidate Dashboard 🌸</h1>
+        <a href="/logout" class="btn-logout">Logout</a>
+    </div>
+</header>
+
+<!-- =========================
+     MAIN CONTENT
+========================= -->
+<main class="dashboard-container">
+
+    <div class="dashboard-card">
+        <h2>Welcome back, <strong>{{ session.username }}</strong> 🌸</h2>
+
+        <p>Use the buttons below to view available jobs and check notifications.</p>
+        <br>
+        <div class="dashboard-buttons">
+            <a class="btn-primary" href="/candidate/jobs">View Jobs</a>
+            <a class="btn-info" href="/candidate/interview">Interview</a>
+            <a class="btn-info" href="/candidate/notifications">Notifications</a>
+        </div>
+    </div>
+
+</main>
+
+<!-- =========================
+     FOOTER
+========================= -->
+<footer class="dashboard-footer">
+    <p>© 2026 RMS System. All Rights Reserved 🌸</p>
+</footer>
+
+<div id="flower-background"></div>
+    
+<!-- Include JS for flowers -->
+<script src="{{ url_for('static', filename='js/flowers.js') }}"></script>
+
+</body>
+</html>

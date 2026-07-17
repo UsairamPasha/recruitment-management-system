@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Candidate Login – RMS</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/auth.css') }}">
+</head>
+<body class="auth-page">
+
+<div class="auth-wrapper">
+    <h2 class="auth-title">🌸 Candidate Portal</h2>
+
+    <div class="auth-card">
+        <h3>Candidate Login 🌸</h3>
+
+       
+
+        <form method="post" class="auth-form">
+            <div class="form-group">
+                <label class="form-label">Email</label>
+                <input name="email" type="email" class="form-control" placeholder="you@example.com" required>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Password</label>
+                <input name="password" type="password" class="form-control" placeholder="••••••••" required>
+            </div>
+
+             {% with messages = get_flashed_messages(with_categories=true) %}
+          {% if messages %}
+            <div style="color: red;">
+              {% for category, message in messages %}
+                <div>{{ message }}</div>
+              {% endfor %}
+            </div>
+          {% endif %}
+        {% endwith %}
+        
+            <button type="submit" class="btns btn-auth-full">Login ✨</button>
+        </form>
+
+        <p class="auth-links">
+            Don’t have an account? <a href="/register">Register 🌸</a>
+        </p>
+    </div>
+</div>
+
+<div id="flower-background"></div>
+<script src="{{ url_for('static', filename='js/flowers.js') }}"></script>
+</body>
+</html>

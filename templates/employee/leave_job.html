@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Leave Job</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/employee.css') }}">
+</head>
+<body class="employee-page">
+
+<!-- =========================
+     HEADER
+========================= -->
+<header class="dashboard-header">
+    <div class="header-container">
+        <h1>Employee Dashboard 🌸</h1>
+        <a href="/employee/dashboard" class="btn-logout">Back</a>
+    </div>
+</header>
+
+<!-- =========================
+     MAIN CONTENT
+========================= -->
+<main class="dashboard-main">
+    <div class="main-content">
+        <div class="auth-card danger-card">
+            <h2 class="section-title danger-text">Leave Job</h2>
+
+            <p class="warning-text">
+                Are you sure you want to leave your current job?
+                <br>
+                This action will downgrade your role to <strong>Candidate</strong>.
+            </p>
+
+            <form method="POST" class="action-row">
+                <button type="submit" class="dashboard-btn danger">
+                    Confirm Leave Job
+                </button>
+                <a href="/employee/dashboard" class="dashboard-btn">
+                    Cancel
+                </a>
+            </form>
+        </div>
+    </div>
+</main>
+
+<!-- =========================
+     FOOTER
+========================= -->
+<footer class="dashboard-footer">
+    <p>© 2026 RMS System. All Rights Reserved 🌸</p>
+</footer>
+
+<div id="flower-background"></div>
+    
+<!-- Include JS for flowers -->
+<script src="{{ url_for('static', filename='js/flowers.js') }}"></script>
+
+</body>
+</html>

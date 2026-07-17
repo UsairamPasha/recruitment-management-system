@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Job</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/employee.css') }}">
+</head>
+<body class="employee-page">
+
+<!-- =========================
+     HEADER
+========================= -->
+<header class="dashboard-header">
+    <div class="header-container">
+        <h1>Edit Job 🌸</h1>
+        <a href="/employee/jobs" class="btn-logout">Back</a>
+    </div>
+</header>
+
+<!-- =========================
+     MAIN CONTENT
+========================= -->
+<main class="dashboard-main">
+    <div class="main-content">
+        <div class="auth-card">
+            <h2>Edit Job Details</h2>
+
+            <form method="POST">
+                <div class="form-group">
+                    <label>Title</label>
+                    <input
+                        type="text"
+                        name="title"
+                        value="{{ job.title }}"
+                        class="form-control"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label>Description</label>
+                    <textarea
+                        name="description"
+                        class="form-control"
+                        rows="4"
+                        required
+                    >{{ job.description }}</textarea>
+                </div>
+
+                <button type="submit" class="btn-primary mt-3">
+                    Update Job
+                </button>
+            </form>
+        </div>
+    </div>
+</main>
+
+<!-- =========================
+     FOOTER
+========================= -->
+<footer class="dashboard-footer">
+    <p>© 2026 RMS System. All Rights Reserved 🌸</p>
+</footer>
+
+<div id="flower-background"></div>
+    
+<!-- Include JS for flowers -->
+<script src="{{ url_for('static', filename='js/flowers.js') }}"></script>
+</body>
+</html>

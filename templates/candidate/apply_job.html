@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Apply Job</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/candidate.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <h2 style="text-align: center; color: #ec4899;margin: 30px;">🌸 Apply for: {{ job.title }}</h2>
+
+<div style="display: flex; justify-content: center;">
+    <div class="auth-card mx-auto">
+        <form method="post">
+            <label class="form-label">Matric Division</label>
+            <select name="matric_div" class="form-control mb-2" required>
+                <option value="">Select</option>
+                <option>A</option><option>B</option><option>C</option><option>D</option>
+            </select>
+
+            <label class="form-label">Inter Division</label>
+            <select name="inter_div" class="form-control mb-2" required>
+                <option value="">Select</option>
+                <option>A</option><option>B</option><option>C</option><option>D</option>
+            </select>
+
+            <label class="form-label">Graduation Division</label>
+            <select name="grad_div" class="form-control mb-2" required>
+                <option value="">Select</option>
+                <option>A</option><option>B</option><option>C</option><option>D</option>
+            </select>
+
+            <label class="form-label">Masters Division</label>
+            <select name="master_div" class="form-control mb-3" required>
+                <option value="">Select</option>
+                <option>A</option><option>B</option><option>C</option><option>D</option>
+            </select>
+
+            <button type="submit" class="btn-primary w-100">Apply ✨</button>
+        </form>
+    </div>
+</div>
+</div>
+
+<div id="flower-background"></div>
+    
+<!-- Include JS for flowers -->
+<script src="{{ url_for('static', filename='js/flowers.js') }}"></script>
+</body>
+</html>

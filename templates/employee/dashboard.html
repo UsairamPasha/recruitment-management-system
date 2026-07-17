@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/employee.css') }}">
+</head>
+
+
+<body class="employee-page">
+
+<!-- =========================
+     HEADER 🌸
+========================= -->
+<header class="dashboard-header">
+    <div class="header-container">
+        <h1>Employee Dashboard 🌸</h1>
+        <a href="/logout" class="btn-logout">Logout</a>
+    </div>
+</header>
+
+<!-- =========================
+     MAIN CONTENT 🌸
+========================= -->
+<main class="main-content">
+
+    <div class="auth-card dashboard-card text-center">
+        <h2>
+            Welcome back,
+            <strong>{{ session.username }}</strong> 🌸
+        </h2>
+
+        <p class="dashboard-text">
+            Use the buttons below to manage your work and see your colleagues.
+        </p>
+
+        <div class="dashboard-buttons">
+            <a class="btn-primary" href="/employee/jobs">View Available Jobs</a>
+            <a class="btn-primary" href="/employee/employees">Employees List</a>
+            <a class="btn-primary" href="/employee/leave-job">Leave Job</a>
+        </div>
+    </div>
+
+</main>
+
+<!-- =========================
+     FOOTER 🌸
+========================= -->
+<footer class="dashboard-footer">
+    <p>© 2026 RMS System. All Rights Reserved 🌸</p>
+</footer>
+
+<div id="flower-background"></div>
+
+<!-- Include JS for flowers -->
+<script src="{{ url_for('static', filename='js/flowers.js') }}"></script>
+</body>
+</html>

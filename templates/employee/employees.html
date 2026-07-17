@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Employees List</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/employee.css') }}">
+</head>
+<body class="employee-page">
+
+<!-- =========================
+     HEADER
+========================= -->
+<header class="dashboard-header">
+    <div class="header-container">
+        <h1>Employees List 🌸</h1>
+        <a href="/employee/dashboard" class="btn-logout">Back</a>
+    </div>
+</header>
+
+<!-- =========================
+     MAIN CONTENT
+========================= -->
+<main class="dashboard-main">
+    <div class="main-content">
+        <div class="dashboard-card">
+            <h2>All Employees 🌸</h2>
+            <p>View all employees and manage them.</p>
+
+            {% if employees %}
+            <div class="table-custom-container">
+                <table class="table-custom">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Username</th>
+                            <th>Email</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for emp in employees %}
+                        <tr>
+                            <td>{{ emp.first_name }} {{ emp.last_name }}</td>
+                            <td>{{ emp.username }}</td>
+                            <td>{{ emp.email }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            {% else %}
+            <p class="empty-state">No employees found.</p>
+            {% endif %}
+        </div>
+    </div>
+</main>
+
+<!-- =========================
+     FOOTER
+========================= -->
+<footer class="dashboard-footer">
+    <p>© 2026 RMS System. All Rights Reserved 🌸</p>
+</footer>
+
+<div id="flower-background"></div>
+    
+<!-- Include JS for flowers -->
+<script src="{{ url_for('static', filename='js/flowers.js') }}"></script>
+</body>
+</html>

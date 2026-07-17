@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>RMS – Register</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/auth.css') }}">
+</head>
+
+<body class="auth-page">
+
+<div class="auth-wrapper">
+
+    <h2 class="auth-title">
+        🌸 Recruitment Management System
+    </h2>
+
+    <div class="auth-card">
+
+        <h3>Create Account 🎀</h3>
+
+        <form method="post" action="/register/employee" class="auth-form">
+
+            <input name="first_name" class="form-control" placeholder="First Name" required>
+            <input name="last_name" class="form-control" placeholder="Last Name" required>
+            <input name="username" class="form-control" placeholder="Username" required>
+            <input name="email" type="email" class="form-control" placeholder="Email" required>
+            <input type="password" name="password" class="form-control" placeholder="Password" minlength="8" required>
+            <input type="password" name="confirm_password" class="form-control" placeholder="Confirm Password" minlength="8" required>
+
+
+            <!-- Flash messages: place above the form -->
+        {% with messages = get_flashed_messages(with_categories=true) %}
+          {% if messages %}
+            <div style="color: red;">
+              {% for category, message in messages %}
+                <div >{{ message }}</div>
+              {% endfor %}
+            </div>
+          {% endif %}
+        {% endwith %}
+
+            <button type="submit" class="btns">
+                Register 💕
+            </button>
+
+        </form>
+
+        <p class="auth-links">
+            Already have an account?
+            <a href="/login/employee">Login 🌷</a>
+        </p>
+
+    </div>
+</div>
+
+<!-- Flower background container -->
+<div id="flower-background"></div>
+
+<!-- Include JS at the end of body -->
+<script src="{{ url_for('static', filename='js/flowers.js') }}"></script>
+
+</body>
+</html>

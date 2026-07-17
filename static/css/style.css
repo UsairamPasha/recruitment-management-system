@@ -1,0 +1,337 @@
+/* =========================
+   GLOBAL RESET & THEME 🌸
+========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', 'Segoe UI', sans-serif;
+    color: #374151;
+    background: url('/static/images/dashboard-bg.jpg') center/cover no-repeat;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+
+    
+}
+
+/* =========================
+   DASHBOARD HEADER 🌸
+========================= */
+.dashboard-header {
+    background: rgba(236, 72, 153, 0.9);
+    color: #fff;
+    padding: 15px 30px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.header-container h1 {
+    font-size: 1.8rem;
+    color: #fff;
+}
+
+.btn-logout {
+    background: #fff;
+    color: #ec4899;
+    padding: 8px 18px;
+    border-radius: 25px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.btn-logout:hover {
+    background: #fce7f3;
+    transform: translateY(-2px) scale(1.03);
+}
+
+/* =========================
+   MAIN CONTAINER 🌸
+========================= */
+.container {
+    flex: 1;
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* =========================
+   PAGE TITLES 🌸
+========================= */
+h2.text-center {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #ec4899;
+    text-align: center;
+    margin-bottom: 25px;
+    text-shadow: 1px 1px 3px #fff;
+}
+
+h3 {
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: #db2777;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* =========================
+   BUTTONS 💕
+========================= */
+.btns,
+.btn-primary,
+.btn-info,
+.btn-warning,
+.btn-danger {
+    display: inline-block;
+    padding: 12px 20px;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 1rem;
+    text-decoration: none;
+    color: #fff;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.btns,
+.btn-primary {
+    background: linear-gradient(135deg, #f472b6, #ec4899);
+}
+
+.btn-info {
+    background: linear-gradient(135deg, #3b82f6, #60a5fa);
+}
+
+.btn-warning {
+    background: linear-gradient(135deg, #facc15, #fbbf24);
+}
+
+.btn-danger {
+    background: linear-gradient(135deg, #ef4444, #dc2626);
+}
+
+.btns:hover,
+.btn-primary:hover,
+.btn-info:hover,
+.btn-warning:hover,
+.btn-danger:hover {
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 6px 12px rgba(236,72,153,0.25);
+}
+
+.btn-info:hover { background: linear-gradient(135deg, #2563eb, #3b82f6); }
+.btn-warning:hover { background: linear-gradient(135deg, #fbbf24, #facc15); }
+.btn-danger:hover { background: linear-gradient(135deg, #dc2626, #ef4444); }
+
+/* =========================
+   TABLE CUSTOM 🌸
+========================= */
+.table-custom-container {
+    width: 100%;
+    overflow-x: auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(236, 72, 153, 0.15);
+    margin-bottom: 30px;
+}
+
+.table-custom {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 8px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.95rem;
+    color: #374151;
+}
+
+.table-custom th {
+    background: linear-gradient(135deg, #f472b6, #ec4899);
+    color: #fff;
+    font-weight: 700;
+    text-align: left;
+    padding: 12px 16px;
+    border-radius: 12px 12px 0 0;
+    text-transform: uppercase;
+}
+
+.table-custom td {
+    background: #fff0f5;
+    padding: 12px 16px;
+    border-radius: 0 0 12px 12px;
+    transition: all 0.3s ease;
+}
+
+.table-custom tr:hover td {
+    background: #ffe6f0;
+}
+
+.table-custom tr:nth-child(even) td {
+    background: rgba(236, 72, 153, 0.08);
+}
+
+.table-custom td a.btn {
+    font-size: 0.85rem;
+    padding: 6px 12px;
+    margin: 0 4px;
+    border-radius: 12px;
+    font-weight: 600;
+    text-decoration: none;
+    color: #fff;
+    transition: all 0.3s ease;
+}
+
+/* =========================
+   CREATE / AUTH FORM 🌸
+========================= */
+.auth-card {
+    max-width: 500px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 35px 30px;
+    border-radius: 25px;
+    box-shadow: 0 20px 45px rgba(236,72,153,0.35);
+    text-align: center;
+    animation: fadeUp 0.6s ease;
+}
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.form-label {
+    display: block;
+    text-align: left;
+    font-weight: 500;
+    color: #6b7280;
+    margin-bottom: 8px;
+}
+
+.form-control,
+textarea.form-control {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 15px;
+    border: 1px solid #fbcfe8;
+    background: #fff0f5;
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus,
+textarea.form-control:focus {
+    border-color: #ec4899;
+    box-shadow: 0 0 0 3px rgba(236,72,153,0.25);
+    outline: none;
+    background: #ffe6f0;
+}
+
+.btn-primary.w-100 {
+    width: 100%;
+    padding: 12px;
+    border-radius: 25px;
+    font-weight: 700;
+    font-size: 1rem;
+    margin-top: 10px;
+    background: linear-gradient(135deg, #f472b6, #ec4899);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-primary.w-100:hover {
+    background: linear-gradient(135deg, #ec4899, #f472b6);
+    transform: translateY(-2px) scale(1.03);
+    box-shadow: 0 10px 20px rgba(236,72,153,0.25);
+}
+
+/* =========================
+   DASHBOARD CARD 🌸
+========================= */
+.dashboard-card {
+    width: 100%;
+    max-width: 650px;
+    padding: 50px 35px;
+    border-radius: 25px;
+    background: rgba(255,255,255,0.95);
+    box-shadow: 0 15px 40px rgba(236,72,153,0.25);
+    text-align: center;
+    margin: 0 auto 30px;
+}
+
+.dashboard-card:hover {
+    transform: translateY(-5px);
+}
+/* =========================
+   DASHBOARD CONTAINER – CENTER CONTENT 🌸
+========================= */
+.dashboard-container {
+    flex: 1; /* take remaining height between header and footer */
+    display: flex;
+    justify-content: center; /* horizontal center */
+    align-items: center;     /* vertical center */
+    padding: 30px 20px;
+}
+/* =========================
+   DASHBOARD BUTTONS 🌸
+========================= */
+.dashboard-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* =========================
+   FOOTER 🌸
+========================= */
+.dashboard-footer {
+    background: rgba(236, 72, 153, 0.9);
+    color: #fff;
+    text-align: center;
+    padding: 14px;
+    font-size: 14px;
+    box-shadow: 0 -4px 12px rgba(0,0,0,0.2);
+    margin-top: auto;
+}
+
+/* =========================
+   RESPONSIVE 📱
+========================= */
+@media (max-width: 768px) {
+    .table-custom th, .table-custom td { padding: 10px; font-size: 0.85rem; }
+    .btns, .btn-primary, .btn-info { width: 100%; }
+}
+
+@media (max-width: 480px) {
+    h2.text-center { font-size: 1.6rem; }
+    .auth-card { padding: 25px 15px; }
+    .btn-primary.w-100 { font-size: 0.95rem; padding: 10px; }
+    .table-custom th, .table-custom td { padding: 8px; font-size: 0.8rem; }
+}

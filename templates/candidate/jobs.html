@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Available Jobs</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/candidate.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <h2 style="text-align: center; color: #ec4899;margin: 30px;">🌸 Available Jobs</h2>
+
+    <div >
+        <table class="table-custom">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>Vacancies Left</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+    {% for job in available_jobs %}
+    <tr>
+        <td>{{ job.title }}</td>
+        <td>{{ job.description }}</td>
+        <td>{{ job.max_applicants - job.applied_count }}</td>
+        <td>
+            <a href="/candidate/apply/{{ job.id }}" class="btn-primary btn-sm">
+                Apply ✨
+            </a>
+        </td>
+    </tr>
+    {% else %}
+    <tr>
+        <td colspan="4" style="text-align:center;">No jobs available</td>
+    </tr>
+    {% endfor %}
+</tbody>
+
+        </table>
+    </div>
+</div>
+
+
+
+<div class="container">
+    <h2 style="text-align: center; color: #ec4899;margin: 30px;">🌸 You Applied For these Jobs</h2>
+
+    <div >
+        <table class="table-custom">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>Vacancies Left</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+    {% for job in applied_jobs %}
+    <tr>
+        <td>{{ job.title }}</td>
+        <td>{{ job.description }}</td>
+        <td>{{ job.max_applicants - job.applied_count }}</td>
+        <td>
+            <span style="
+                background-color: #22c55e;
+                color: white;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 0.85rem;
+            ">
+                Applied ✔
+            </span>
+        </td>
+    </tr>
+    {% else %}
+    <tr>
+        <td colspan="4" style="text-align:center;">You have not applied for any job</td>
+    </tr>
+    {% endfor %}
+</tbody>
+
+        </table>
+    </div>
+</div>
+
+<div style="display: flex; justify-content: center; margin: 30px;">
+    <a href="/candidate/dashboard" class="btn-primary" style="text-align: center;">Back to Dashboard</a>
+</div>
+
+<div id="flower-background"></div>
+    
+<!-- Include JS for flowers -->
+<script src="{{ url_for('static', filename='js/flowers.js') }}"></script>
+
+</body>
+</html>

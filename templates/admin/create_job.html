@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Job</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/admin.css') }}">
+</head>
+<body class="admin-page">
+
+<div >
+    <h2 style="text-align: center; color: #ec4899;margin: 30px;">Create Job 🌸</h2>
+<br>
+<div style="display: flex; justify-content: center;">
+    <div class="auth-card mx-auto">
+        <form method="post">
+            <label class="form-label">Job Title</label>
+            <input name="title" class="form-control" placeholder="Job Title" required>
+
+            <label class="form-label">Job Description</label>
+            <textarea name="description" class="form-control" placeholder="Job Description" rows="4" required></textarea>
+
+            <label class="form-label">Minimum Merit %</label>
+            <input name="min_merit" type="number" class="form-control" placeholder="Minimum Merit %" required>
+
+            <label class="form-label">Maximum Applicants</label>
+            <input name="max_applicants" type="number" class="form-control" placeholder="Maximum Applicants" required>
+
+            <button type="submit" class="btn-primary w-100 mt-2">Create Job ✨</button>
+            
+            <a href="/admin/jobs" class="btn-primary">Cancel</a>
+
+</div>
+        </form>
+    </div>
+</div>
+</div>
+
+<div id="flower-background"></div>
+    
+<!-- Include JS for flowers -->
+<script src="{{ url_for('static', filename='js/flowers.js') }}"></script>
+
+</body>
+</html>

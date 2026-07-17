@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin – Employees</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/admin.css') }}">
+</head>
+<body class="admin-page">
+
+<!-- =========================
+     HEADER
+========================= -->
+<header class="dashboard-header">
+    <div class="header-container">
+        <h1>Admin Dashboard 🌸</h1>
+        <a href="/logout" class="btn-logout">Logout</a>
+    </div>
+</header>
+
+<!-- =========================
+     MAIN CONTENT
+========================= -->
+<div class="dashboard-main" style="display: flex; justify-content: center; flex-direction: column; align-items: center; gap: 30px; margin-top: 30px;">
+
+    <div class="main-content" style="min-width: 700px; text-align: center;">
+        <h2>Employees List 🌸</h2>
+
+        {% if employees %}
+        <div class="auth-card mx-auto">
+            <table class="table-custom">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Username</th>
+                        <th>Email</th>
+                        <th>Role</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for emp in employees %}
+                    <tr>
+                        <td>{{ emp.first_name }} {{ emp.last_name }}</td>
+                        <td>{{ emp.username }}</td>
+                        <td>{{ emp.email }}</td>
+                        <td>{{ emp.role }}</td>
+                        <td>
+                            <a href="/admin/employee/{{ emp.id }}/delete" class="btn-danger btn-sm">Delete</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% else %}
+        <p>No employees found.</p>
+        {% endif %}
+
+        <a href="/admin/dashboard" class="btn-primary">Back to Dashboard</a>
+    </div>
+
+</div>
+
+<!-- =========================
+     FOOTER
+========================= -->
+<footer class="dashboard-footer">
+    <p>© 2026 RMS System. All Rights Reserved 🌸</p>
+</footer>
+
+<div id="flower-background"></div>
+    
+<!-- Include JS for flowers -->
+<script src="{{ url_for('static', filename='js/flowers.js') }}"></script>
+</body>
+</html>

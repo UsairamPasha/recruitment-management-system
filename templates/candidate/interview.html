@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Candidate Interview</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/candidate.css') }}">
+</head>
+<body>
+<!-- =========================
+     HEADER
+========================= -->
+<header class="dashboard-header">
+    <div class="header-container">
+        <h1 >Candidate Dashboard 🌸</h1>
+        <a href="/logout" class="btn-logout">Logout</a>
+    </div>
+</header>
+
+    <!-- Main Content -->
+<div style="display: flex; justify-content: center; ">
+    <div class="main-content" style="text-align: center;">
+        <h2 style="text-align: center; color: #ec4899;margin-top: 50px; margin-bottom: 30px;">Job Interview</h2>
+
+        {% if interviews %}
+<div>
+    <table class="table-custom">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Interview Time</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for interview in interviews %}
+            <tr>
+                <td>{{ interview.title }}</td>
+                <td>{{ interview.description }}</td>
+                <td>{{ interview.interview_time }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% else %}
+<p>No job interview available yet.</p>
+{% endif %}
+
+</div>
+</div>
+
+<div style="display: flex; justify-content: center; margin: 30px;">
+    <a href="/candidate/dashboard" class="btn-primary" style="text-align: center;">Back to Dashboard</a>
+</div>
+
+<!-- =========================
+     FOOTER
+========================= -->
+<footer class="dashboard-footer">
+    <p>© 2026 RMS System. All Rights Reserved 🌸</p>
+</footer>
+
+<div id="flower-background"></div>
+    
+<!-- Include JS for flowers -->
+<script src="{{ url_for('static', filename='js/flowers.js') }}"></script>
+</body>
+</html>

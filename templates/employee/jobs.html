@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee Jobs</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/employee.css') }}">
+</head>
+<body>
+
+<header class="dashboard-header">
+    <div class="header-container">
+        <h1>Employee Dashboard 🌸</h1>
+        <a href="/employee/dashboard" class="btn-logout">Back to Dashboard</a>
+    </div>
+</header>
+
+<main class="main-content">
+            
+    <div class="dashboard-card auth-card">
+            <h2>Available Jobs 🌸</h2>
+<a class="btns" href="/employee/jobs/create">Create Job</a>
+        {% if jobs %}
+        <div class="table-custom-container">
+            <table class="table-custom">
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Description</th>
+                        <th>Min Merit</th>
+                        <th>Max Applicants</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for job in jobs %}
+                    <tr>
+                        <td>{{ job.title }}</td>
+                        <td>{{ job.description }}</td>
+                        <td>{{ job.min_merit }}</td>
+                        <td>{{ job.max_applicants }}</td>
+                        <td>
+                            
+                                <a href="/employee/job/{{ job.id }}/edit" class="btn-primary btn-sm">Edit</a>
+                            
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% else %}
+        <p>No jobs available at the moment.</p>
+        {% endif %}
+        <br>
+        <a href="/employee/dashboard" class="btn-primary mt-3">
+            Back to Dashboard
+        </a>
+    </div>
+
+</main>
+
+
+<footer class="dashboard-footer">
+    <p>© 2026 RMS System. All Rights Reserved 🌸</p>
+</footer>
+
+<div id="flower-background"></div>
+    
+<!-- Include JS for flowers -->
+<script src="{{ url_for('static', filename='js/flowers.js') }}"></script>
+
+</body>
+</html>

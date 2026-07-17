@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Recruitment Management System | RMS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+</head>
+<!-- Floating Social Buttons -->
+<div class="social-float">
+    <a href="https://wa.me/923001456932" target="_blank" class="social-btn whatsapp">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
+    </a>
+
+    <a href="https://www.facebook.com/" target="_blank" class="social-btn facebook">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook">
+    </a>
+</div>
+
+<body>
+
+<!-- Header -->
+<header class="navbar">
+    <div class="container nav-flex">
+        <div class="logo">RMS</div>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">Product</a>
+            <a href="#">Resources</a>
+            <a href="#">Company</a>
+        </nav>
+        <!-- Updated Login Button -->
+        <div class="nav-login-buttons">
+    <a href="{{ url_for('login_landing') }}" class="btn-top">Get Login</a>
+</div>
+
+    </div>
+</header>
+
+<!-- Hero Section -->
+<section class="hero">
+    <div class="container hero-grid">
+        <div>
+            <h1>Recruitment Management System</h1>
+            <p>
+                Automate your hiring process with an intelligent Recruitment Management
+                System designed to simplify candidate sourcing, screening, and onboarding.
+            </p>
+            <div class="hero-buttons">
+                <!-- Updated Hero Buttons -->
+                <a href="{{ url_for('login_landing') }}" class="btn-primary">Get Login</a>
+                <a href="{{ url_for('login_landing') }}" class="btn-outline">Get Register</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="{{ url_for('static', filename='images/Hero image.png') }}" alt="RMS Hero" width="600" height="auto" class="hero-img">
+        </div>
+    </div>
+</section>
+
+<!-- About RMS -->
+<section class="section light">
+    <div class="container">
+        <h2>What is a Recruitment Management System?</h2>
+        <p class="section-text">
+            A Recruitment Management System (RMS) is an advanced HR solution that
+            streamlines the hiring lifecycle — from job posting and candidate tracking
+            to interviews and final selection.
+        </p>
+    </div>
+</section>
+
+<!-- Features -->
+<section class="section">
+    <div class="container">
+        <h2>Key Features</h2>
+        <div class="features-grid">
+            <div class="card">Applicant Tracking System</div>
+            <div class="card">Resume Parsing</div>
+            <div class="card">Interview Scheduling</div>
+            <div class="card">Candidate Database</div>
+            <div class="card">Automated Communication</div>
+            <div class="card">Analytics & Reports</div>
+        </div>
+    </div>
+</section>
+
+<!-- Benefits -->
+<section class="section light">
+    <div class="container">
+        <h2>Benefits of Using RMS</h2>
+        <ul class="benefits">
+            <li>Faster hiring process</li>
+            <li>Reduced manual workload</li>
+            <li>Improved candidate experience</li>
+            <li>Centralized recruitment data</li>
+            <li>Better hiring decisions</li>
+        </ul>
+    </div>
+</section>
+
+<!-- How It Works -->
+<section class="section">
+    <div class="container">
+        <h2>How It Works</h2>
+        <div class="steps">
+            <div class="step">1. Post Job Openings</div>
+            <div class="step">2. Receive Applications</div>
+            <div class="step">3. Screen Candidates</div>
+            <div class="step">4. Conduct Interviews</div>
+            <div class="step">5. Hire the Best Talent</div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+    <div class="container">
+        <h2>Start Hiring Smarter Today</h2>
+        <p>Upgrade your recruitment strategy with a modern RMS solution.</p>
+        <!-- Updated CTA Button -->
+        <a href="{{ url_for('login_landing') }}" class="btn-top">Request a Login</a>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container footer-grid">
+        <div>
+            <h3>PocketHRMS</h3>
+            <p>Smart HR & Recruitment Solutions</p>
+        </div>
+        <div>
+            <h4>Quick Links</h4>
+            <a href="#">Product</a>
+            <a href="#">Resources</a>
+            <a href="#">Company</a>
+        </div>
+        <div>
+            <h4>Contact</h4>
+            <p>Email: Rms@example.com</p>
+            <p>Phone: +92 30873839</p>
+        </div>
+    </div>
+    <p class="copyright">© 2026 PocketHRMS Clone | Academic Use</p>
+</footer>
+
+</body>
+</html>

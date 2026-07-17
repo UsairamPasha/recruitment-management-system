@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>All Jobs</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/admin.css') }}">
+</head>
+<body class="admin-page">
+
+<div class="container">
+    <h2 style="text-align: center; color: #ec4899;">All Jobs 🌸</h2>
+
+<div>
+    <br>
+    <div>
+         <a class="btns" href="/admin/jobs/create">Create Job</a>
+    </div>
+       
+    
+    
+    <div class="table-custom-container">
+    <table class="table-custom">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Min Merit</th>
+                <th>Max Applicants</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for job in jobs %}
+            <tr>
+                <td>{{ job.title }}</td>
+                <td>{{ job.description }}</td>
+                <td>{{ job.min_merit }}</td>
+                <td>{{ job.max_applicants }}</td>
+                <td>
+                    <a href="/admin/job/{{ job.id }}/edit" class="btn btn-warning btn-sm">Edit ✨</a>
+                    <a href="/admin/job/{{ job.id }}/delete" class="btn btn-danger btn-sm">Delete ❌</a>
+                    <a href="/admin/job/{{ job.id }}/applications" class="btn btn-info btn-sm">Applications 🌟</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+</div>
+
+</div>
+<div style="display: flex; justify-content: center; margin: 30px;" > 
+    <a href="/admin/dashboard" class="btn-primary">Back to Dashboard</a></div>
+
+</div>
+<div id="flower-background"></div>
+    
+<!-- Include JS for flowers -->
+<script src="{{ url_for('static', filename='js/flowers.js') }}"></script>
+</body>
+</html>

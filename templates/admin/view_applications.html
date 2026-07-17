@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>View Applications</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/admin.css') }}">
+    
+</head>
+<body class="admin-page">
+
+<div class="container">
+    <h2 style="text-align: center; color: #ec4899;">Applications for: {{ job.title }} 🌸</h2>
+
+    <div class="table-custom-container">
+        <table class="table-custom">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Username</th>
+                    <th>Email</th>
+                    <th>Matric</th>
+                    <th>Inter</th>
+                    <th>Grad</th>
+                    <th>Master</th>
+                    <th>Merit</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for app in applications %}
+                <tr id="row-{{ app.id }}">
+                    <td>{{ app.name }}</td>
+                    <td>{{ app.username }}</td>
+                    <td>{{ app.email }}</td>
+                    <td>{{ app.matric_div }}</td>
+                    <td>{{ app.inter_div }}</td>
+                    <td>{{ app.grad_div }}</td>
+                    <td>{{ app.master_div }}</td>
+                    <td>{{ app.merit }}</td>
+                    <td>
+                        {% if app.status=='pending' %}
+                            <span class="badge" style="background:#facc15;color:#000;">Pending</span>
+                        {% elif app.status=='approved' %}
+                            <span class="badge" style="background:#22c55e;">Approved</span>
+                        {% else %}
+                            <span class="badge" style="background:#ef4444;">Rejected</span>
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% if app.status=='pending' %}
+                        <!-- Pass ID as string to JS -->
+                        <button class="btn-success btn-sm" type="button" onclick="openCanvas('{{ app.id }}')">Approve ✔️</button>
+                        <a href="/admin/application/{{ app.id }}/action/reject" class="btn-danger btn-sm">Reject ❌</a>
+
+
+                        {% endif %}
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+<div style="display: flex; justify-content: center; margin: 30px;" > 
+    <a href="/admin/dashboard" class="btn-primary">Back to Dashboard</a>
+
+</div>
+<!-- Canvas Modal -->
+<div class="canvas-overlay" id="canvasOverlay">
+    <div class="canvas-content">
+        <h3>Select Interview Time 🌸</h3>
+        <input type="datetime-local" id="interviewTime">
+        <br>
+        <button class="btn-success" onclick="applyInterview()">Apply ✨</button>
+        <button class="btn-danger" onclick="closeCanvas()">Cancel ❌</button>
+    </div>
+</div>
+
+<div id="flower-background"></div>
+    
+<!-- Include JS for flowers -->
+<script src="{{ url_for('static', filename='js/flowers.js') }}"></script>
+
+
+<script>
+let selectedAppId = null;
+
+function openCanvas(appId){
+    selectedAppId = appId; // keep as string, Flask can parse it
+    document.getElementById('interviewTime').value = ''; // reset
+    document.getElementById('canvasOverlay').style.display = 'flex';
+}
+
+function closeCanvas(){
+    selectedAppId = null;
+    document.getElementById('canvasOverlay').style.display = 'none';
+}
+
+function applyInterview(){
+    const time = document.getElementById('interviewTime').value;
+    if(!time){
+        alert("Please select a time");
+        return;
+    }
+
+    // Send POST request to server
+    fetch(`/admin/application/${selectedAppId}/approve`, {
+        method: 'POST',
+        headers: {'Content-Type':'application/json'},
+        body: JSON.stringify({ interview_time: time })
+    })
+    .then(res => {
+        if (!res.ok) throw new Error("Network response was not OK");
+        return res.json();
+    })
+    .then(data => {
+        if(data.success){
+            // Remove approve/reject buttons and show approved badge
+            const row = document.getElementById(`row-${selectedAppId}`);
+            row.querySelector('td:last-child').innerHTML = `<span class="badge" style="background:#22c55e;">Approved</span>`;
+            closeCanvas();
+            alert("Application approved and candidate notified!");
+        } else {
+            alert(data.error || "Unknown error");
+        }
+    })
+    .catch(err => { 
+        console.error(err); 
+        alert("Error processing request. Check console for details."); 
+    });
+}
+</script>
+
+
+</body>
+</html>
